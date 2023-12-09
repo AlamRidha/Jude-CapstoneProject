@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">JudeTesMainMenuXml</string>
+    <string name="explore">Explore</string>
+    <string name="liked">Liked</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_liked">Liked</string>
+    <string name="title_profile">Profile</string>
+    <string name="notifications">notifications</string>
+    <string name="dump_name">Eko Suprapto</string>
+    <string name="welcome">Welcome,</string>
+    <string name="description_iklan">Iklan</string>
+    <string name="popular_product">Popular Product</string>
+    <string name="searchbar_hint">Search Anything</string>
+
+    <!--    dummy data -->
+    <string-array name="data_design">
+        <item>Design 1</item>
+        <item>Design 2</item>
+        <item>Design 3</item>
+    </string-array>
+
+<!--    <string-array name="data_description">-->
+<!--        <item>Design baju yang elastis dan design yang sangat elegan</item>-->
+<!--        <item>Design baju yang elastis dan design yang sangat elegan</item>-->
+<!--        <item>Design baju yang elastis dan design yang sangat elegan</item>-->
+<!--    </string-array>-->
+    
+    <integer-array name="data_photo">
+        <item>@drawable/design1</item>
+        <item>@drawable/design2</item>
+        <item>@drawable/design1</item>
+    </integer-array>
+
+    <string-array name="data_price">
+        <item>Rp 20.000</item>
+        <item>Rp 50.000</item>
+        <item>Rp 75.000</item>
+    </string-array>
+</resources>
