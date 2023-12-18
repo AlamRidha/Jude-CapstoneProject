@@ -1,15 +1,12 @@
 package com.example.judetesmainmenuxml
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.judetesmainmenuxml.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.navigation.ui.setupActionBarWithNavController
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -32,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 //            )
 //        )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
+
         navView.setupWithNavController(navController)
     }
 }

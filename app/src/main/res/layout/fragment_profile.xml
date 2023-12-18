@@ -1,44 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!-- if want change to constraint layout move schema and toolcontext to param-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.profile.ProfileFragment">
 
-    <View
-        android:id="@+id/vw_bg"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/profile"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/tv_profile"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="8dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--    Profile Picture-->
+        <View
+            android:id="@+id/vw_bg"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    Email Component     -->
+        <View
+            android:id="@+id/vw_tv1"
+            android:layout_width="370dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+
+        <ImageView
+            android:id="@+id/iv_icEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_email_24"
+            app:layout_constraintBottom_toBottomOf="@id/vw_tv1"
+            app:layout_constraintStart_toStartOf="@id/vw_tv1"
+            app:layout_constraintTop_toTopOf="@id/vw_tv1" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/email"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_icEmail"
+            app:layout_constraintTop_toTopOf="@id/vw_tv1" />
+
+        <TextView
+            android:id="@+id/tv_uemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="jude@gmail.com"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/iv_icEmail"
+            app:layout_constraintTop_toBottomOf="@id/tv_email" />
+
+        <!--    Username Component    -->
+        <View
+            android:id="@+id/vw_tv2"
+            android:layout_width="370dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vw_tv1" />
+
+        <ImageView
+            android:id="@+id/iv_icName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_round_account_circle_24"
+            app:layout_constraintBottom_toBottomOf="@id/vw_tv2"
+            app:layout_constraintStart_toStartOf="@id/vw_tv2"
+            app:layout_constraintTop_toTopOf="@id/vw_tv2" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/name"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_icName"
+            app:layout_constraintTop_toTopOf="@id/vw_tv2" />
+
+        <TextView
+            android:id="@+id/tv_uname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Eko Suprapto"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/iv_icName"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+
+        <!--    Mobile Number Component     -->
+
+        <View
+            android:id="@+id/vw_tv3"
+            android:layout_width="370dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vw_tv2" />
+
+        <ImageView
+            android:id="@+id/iv_icNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_call_24"
+            app:layout_constraintBottom_toBottomOf="@id/vw_tv3"
+            app:layout_constraintStart_toStartOf="@id/vw_tv3"
+            app:layout_constraintTop_toTopOf="@id/vw_tv3" />
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/mobile_number"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_icNumber"
+            app:layout_constraintTop_toTopOf="@id/vw_tv3" />
+
+        <TextView
+            android:id="@+id/tv_unumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="0812345678910"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/iv_icNumber"
+            app:layout_constraintTop_toBottomOf="@id/tv_number" />
+
+        <!--    Gender Component    -->
+        <View
+            android:id="@+id/vw_tv4"
+            android:layout_width="370dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vw_tv3" />
+
+        <ImageView
+            android:id="@+id/iv_icGender"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_gender"
+            app:layout_constraintBottom_toBottomOf="@id/vw_tv4"
+            app:layout_constraintStart_toStartOf="@id/vw_tv4"
+            app:layout_constraintTop_toTopOf="@id/vw_tv4" />
+
+        <TextView
+            android:id="@+id/tv_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Gender"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_icGender"
+            app:layout_constraintTop_toTopOf="@id/vw_tv4" />
+
+        <TextView
+            android:id="@+id/tv_ugender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Male"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/iv_icGender"
+            app:layout_constraintTop_toBottomOf="@id/tv_gender" />
+
+        <!--    Logout Button   -->
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#FF2700"
+            android:paddingVertical="16dp"
+            android:text="@string/logout"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vw_tv4" />
+
+        <View
+            android:id="@+id/vw_spacebottombar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
+
+        <!--    Bottom-->
+        <!--    <Button -->
+        <!--        android:id="@+id/btn_logout"-->
+        <!--        android:layout_width="300dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:backgroundTint="#FF2700"-->
+        <!--        android:paddingVertical="16dp"-->
+        <!--        android:text="@string/logout"-->
+        <!--        android:textSize="18sp"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

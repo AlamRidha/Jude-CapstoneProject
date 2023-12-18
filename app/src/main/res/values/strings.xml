@@ -15,6 +15,10 @@
     <string name="description_iklan">Iklan</string>
     <string name="popular_product">Popular Product</string>
     <string name="searchbar_hint">Search Anything</string>
+    <string name="logout">LOGOUT</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="mobile_number">Mobile Number</string>
 
     <!--    dummy data -->
     <string-array name="data_design">
